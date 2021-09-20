@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background: rgb(251, 255, 255);
+}
+
+.headline{
+    font-size: 30px;
+    background: linear-gradient(90deg, #393f4d 50%,#1d1e22);
+    color: whitesmoke;
+    padding: 7px;
+    padding-left: 20px;
+}
+
+.instructions{
+    width: 100%;
+    background: rgb(231, 230, 230);
+    font-size: 17px;
+    font-weight: bold;
+    padding: 7px;
+    padding-left: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+.instructions ul {
+    width: 100%;
+    padding-left: 20px;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+.instructions ul li{
+    margin-bottom: 10px;
+}
+.highlight{
+    color: #148fc0;
+    font-size: 19px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#closeInstructions{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    padding: 7px;
+    background: rgb(185, 184, 184);
+    border-radius: 2px;
+}
+#instructionText{
+    cursor: pointer;
+}
+
+.input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+form{
+    /* margin-top: 20px; */
+    padding: 15px;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    /* align-self: center; */
+}
+
+form input,form label{
+    margin: 7px;
+}
+form label{
+    padding: 5px 15px;
+    border-radius: 7px;
+    font-size: 17px;
+    border: 2px solid rgb(48, 187, 115);
+    /* cursor: pointer; */
+}
+
+form .select{
+    cursor: pointer;
+}
+form .radio {
+    display: none;
+}
+form .radio:checked+label{
+    background: rgb(190, 255, 217);
+}
+
+form label:active{
+    background: rgb(190, 255, 217);
+}
+
+form .btn {
+    margin: 7px;
+    padding: 5px 15px;
+    /* min-height: 40px; */
+    border-radius: 7px;
+    outline: none;
+    border: 2px solid rgb(104, 163, 219);
+    background: rgb(235, 244, 250);
+    font-size: 17px;
+    cursor: pointer;
+}
+
+form .btn:active {
+    border: 2px solid rgb(80, 226, 153);
+    /* border: 2px solid rgb(59, 197, 128); */
+}
+
+.currentChars {
+    min-width: 300px;
+    width: max-content;
+    /* margin-left: 20px; */
+    margin-left: 7px;
+    margin-top: 12px;
+    /* border: 2px solid red; */
+    font-size: 17.5px;
+    font-style: italic;
+    align-self: flex-start;
+    font-weight: 400;
+}
+
+.specCharInput{
+    margin: -25px 0 0 0;
+}
+
+.specCharInput label {
+    width: 630px;
+    min-width: 350px;
+}
+
+.specCharInput input{
+    width: 95%;
+    height: 22px;
+    font-size: 20px;
+    padding: 3px 7px;
+    font-family:Arial, Helvetica, sans-serif;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.specCharInput input:focus{
+    border: 2px solid rgb(81, 218, 115);
+    outline: none;
+}
+
+.mainWords{
+    /* width: 100%; */
+    height: 400px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    /* justify-content: space-between; */
+    /* border: 2px solid red; */
+    /* border: 2px solid #fff3f1; */
+}
+
+.words ,.typeWords{
+    width: 80%;
+    min-height: 150px;
+    max-height: 150px;
+    border: 2px solid grey;
+    /* margin: 20px; */
+    /* margin-bottom: 20px; */
+    border-radius: 7px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    overflow: auto;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    background: white;
+}
+
+
+.typeWords:focus {
+    outline: none;
+}
+
+.score{
+    width: 320px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    height: 40px;
+    /* padding: 7px; */
+    box-sizing: border-box;
+    background: rgb(240, 240, 240);
+    /* text-align: center; */
+    /* line-height: 1.65; */
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.score .bar {
+    width: 100%;
+    height: 100%;
+    /* background: green; */
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.bar .percentage{
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+    padding-left: 5px;
+    line-height: 1.9;
+}
+
+.bar .progress {
+    width: 0%;
+    height: 100%;
+    background: rgb(80, 226, 153);
+    border-radius: 3px;
+}

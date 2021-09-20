@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Typing practice</title>
+</head>
+<body>
+    <div class="input">
+        <h1 class="headline">Typing Practice</h1>
+        <div class="instructions">
+            <!-- <h4>Select Option for practice</h4> -->
+            <span onclick="showInstructions()" id="instructionText">Instructions</span>
+            <ul id="content">
+                <span id="closeInstructions" onclick="closeInstruction()" >Close</span>
+                <li>For practicing words from all characters, select <span class="highlight" onclick="checkRadio('all')">All characters</span> option</li>
+                <li>For practicing words from specific characters, select <span class="highlight" onclick="checkRadio('not')">Specific Characters</span> option</li>
+            </ul>
+        </div>
+        <form action="">
+            <input type="radio" class="radio" name="chars" id="allChars" onclick="forAllChars()">
+            <label for="allChars" class="select">
+                All characters 
+            </label>
+            <br>
+            <input type="radio" class="radio" name="chars" id="specChars" onclick="takeInput()">
+            <label for="specChars" class="select" >
+                Specific characters 
+            </label> 
+            <br>
+            <input type="button" class="generate btn" value="Generate Word" onclick="generateWords()"></input>
+            <input type="button" class="newStart btn" value="Start Again" onclick="resetAll()"></input>
+            <h4 id="currentChars" class="currentChars"></h4>
+        </form>
+        <form action="" class="specCharInput" id="specCharInput">
+            <label for="">Enter characters [space separated] : <br>
+                <input type="text" id="charsIn">
+            </label>
+        </form>
+        
+        <br>
+        <div class="mainWords" id="mainWords">
+            <div class="words" id="words"></div>
+            <br>
+            <div class="score" id="score" >
+                <di class="bar">
+                    <span class="percentage" id="percentage">0%</span>
+                    <div class="progress" id="progress">
+                    </div>
+                </di>
+            </div>
+            <br>
+            <textarea class="typeWords" id="typeWords" oninput="generateResults()"></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
