@@ -6,16 +6,24 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     background: rgb(251, 255, 255);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.headline{
+.headline,footer{
     font-size: 30px;
     background: linear-gradient(90deg, #393f4d 50%,#1d1e22);
-    color: whitesmoke;
+    color: rgb(41, 245, 160);
     padding: 7px;
     padding-left: 20px;
 }
-
+footer{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: right;
+}
 .instructions{
     width: 100%;
     background: rgb(231, 230, 230);
@@ -38,10 +46,9 @@ body{
 }
 
 .highlight{
-    color: #0095cf;
+    color: #058dc3;
     font-size: 19px;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 #closeInstructions{
@@ -190,11 +197,12 @@ form label img,.mainWords img, .instructions img {
     position: relative;
     /* justify-content: space-between; */
     /* border: 2px solid red; */
-    /* border: 2px solid #fff3f1; */
+    /* border: 20px solid #ffecec; */
 }
 
 .words ,.typeWords{
-    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
     min-height: 150px;
     max-height: 150px;
     border: 2px solid grey;

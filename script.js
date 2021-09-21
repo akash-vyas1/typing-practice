@@ -210,7 +210,7 @@ function generateResults(){
         }
         words.style.background='white';
     }else{
-        words.style.background = '#fff3f1';
+        words.style.background = '#ffecec';
         incorrect++;
     }
     if(complete){
