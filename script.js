@@ -25,6 +25,9 @@ let progress = document.getElementById('progress');
 let percentage = document.getElementById('percentage');
 let newStart =0;
 let start,end;
+let specCharTick = document.getElementById('specCharTick');
+let allCharTick = document.getElementById('allCharTick');
+
 
 function resetAll(){
     // alert('resetting')
@@ -48,6 +51,8 @@ function resetAll(){
     percentage.innerText='0%';
     progress.style.width=0+'%';
     newStart=0;
+    specCharTick.style.display='none';
+    allCharTick.style.display='none';
 }
 
 function checkRadio(str){
@@ -66,12 +71,16 @@ function takeInput(){
     inputTaking = true;
     radioChecked = true;
     charInput.style.display = 'flex';
+    specCharTick.style.display='unset';
+    allCharTick.style.display='none';
 }
 
 function forAllChars(){
     inputTaking = false;
     radioChecked = true;
     charInput.style.display = 'none';
+    allCharTick.style.display = 'unset';
+    specCharTick.style.display='none';
 }
 
 function generateWords(){
@@ -80,6 +89,8 @@ function generateWords(){
     words.style.background='white';
     newStart=0;
     progress.style.width='0%';
+    typeWords.removeAttribute('disabled');
+
     if(radioChecked){
 
         let inputField = document.getElementById('charsIn');
@@ -169,6 +180,7 @@ function closeInstruction(){
 
 function generateResults(){
     if(newStart==0){
+        // console.log('new start');
         start=performance.now();
         newStart++;
     }
@@ -176,7 +188,7 @@ function generateResults(){
     let input = typeWords.value;
     let uptoInput = generatedParagraph.substr(0,input.length);
     let remaining = generatedParagraph.substr(input.length,generatedParagraph.length);
-    let end = false;
+    let complete = false;
     // console.log("Input String : "+input);
     // console.log("remaining string : "+remaining);
     // console.log(input+":"+uptoInput+","+input.length+":"+uptoInput.length);
@@ -194,17 +206,23 @@ function generateResults(){
         correctIndex = input.length-1;
         generateScore(input.length);
         if(input==generatedParagraph) {
-            end=true;
+            complete=true;
         }
         words.style.background='white';
     }else{
         words.style.background = '#fff3f1';
         incorrect++;
     }
-    if(end){
+    if(complete){
+        // console.log('complete');
         end=performance.now();
         // alert('Total time taken : '+((end-start)/1000).toFixed(1)+" seconds");
         percentage.innerText = percentage.innerText+', in '+((end-start)/1000).toFixed(1)+" seconds";
+        typeWords.setAttribute('disabled','true');
+        start = 0;
+        end=0;
+        // setTimeout(1500);
+        // alert('done');
         newStart=0;
     }
 }

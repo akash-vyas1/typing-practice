@@ -14,7 +14,8 @@
             <!-- <h4>Select Option for practice</h4> -->
             <span onclick="showInstructions()" id="instructionText">Instructions</span>
             <ul id="content">
-                <span id="closeInstructions" onclick="closeInstruction()" >Close</span>
+                <!-- <span id="closeInstructions"  >Close</span>-->
+                <img src="img/cancel.png" alt="" onclick="closeInstruction()">
                 <li>For practicing words from all characters, select <span class="highlight" onclick="checkRadio('all')">All characters</span> option</li>
                 <li>For practicing words from specific characters, select <span class="highlight" onclick="checkRadio('not')">Specific Characters</span> option</li>
             </ul>
@@ -22,12 +23,14 @@
         <form action="">
             <input type="radio" class="radio" name="chars" id="allChars" onclick="forAllChars()">
             <label for="allChars" class="select">
-                All characters 
+                All characters
+                <img src="img/blue-check.png" alt="" id="allCharTick" style="display: none;">
             </label>
             <br>
             <input type="radio" class="radio" name="chars" id="specChars" onclick="takeInput()">
             <label for="specChars" class="select" >
                 Specific characters 
+                <img src="img/blue-check.png" alt="" id="specCharTick" style="display: none;">
             </label> 
             <br>
             <input type="button" class="generate btn" value="Generate Word" onclick="generateWords()"></input>
@@ -42,7 +45,8 @@
         
         <br>
         <div class="mainWords" id="mainWords">
-            <div class="words" id="words"></div>
+            <div class="words" id="words">
+            </div>
             <br>
             <div class="score" id="score" >
                 <di class="bar">
