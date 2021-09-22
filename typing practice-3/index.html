@@ -10,35 +10,31 @@
 <body>
     <div class="input">
         <h1 class="headline">Typing Practice</h1>
-
-        <!-- <div class="instructions">
+        <div class="instructions">
+            <!-- <h4>Select Option for practice</h4> -->
             <span onclick="showInstructions()" id="instructionText">Instructions</span>
             <ul id="content">
+                <!-- <span id="closeInstructions"  >Close</span>-->
                 <img src="img/cancel.png" alt="" onclick="closeInstruction()">
                 <li>1. For practicing words from all characters, select <span class="highlight" onclick="checkRadio('all')">All characters</span> option</li>
                 <li>2. For practicing words from specific characters, select <span class="highlight" onclick="checkRadio('not')">Specific Characters</span> option</li>
             </ul>
-        </div> -->
-
+        </div>
         <form action="">
             <input type="radio" class="radio" name="chars" id="allChars" onclick="forAllChars()">
             <label for="allChars" class="select">
                 All characters
                 <img src="img/blue-check.png" alt="" id="allCharTick" style="display: none;">
             </label>
-            <!-- <br> -->
+            <br>
             <input type="radio" class="radio" name="chars" id="specChars" onclick="takeInput()">
             <label for="specChars" class="select" >
                 Specific characters 
                 <img src="img/blue-check.png" alt="" id="specCharTick" style="display: none;">
             </label> 
-            <!-- <br> -->
-            <input type="button" class="generate btn" value="Generate Word" onclick="generateWords()">
-                <!-- <img src="img/tick.png" class="activeImg" alt=""> -->
-            </input>
-            <input type="button" class="newStart btn" value="Start Again" oncontextmenu="" onclick="resetAll()">
-                <!-- <img src="img/tick.png" class="activeImg" alt=""> -->
-            </input>
+            <br>
+            <input type="button" class="generate btn" value="Generate Word" onclick="generateWords()"></input>
+            <input type="button" class="newStart btn" value="Start Again" onclick="resetAll()"></input>
             <h4 id="currentChars" class="currentChars"></h4>
         </form>
         <form action="" class="specCharInput" id="specCharInput">
@@ -49,16 +45,7 @@
         
         <br>
         <div class="mainWords" id="mainWords">
-            <div class="first words" id="words">
-                <div id="firstText">
-                    1. For practicing words from all characters, select <span class="highlight" onclick="checkRadio('all')">All characters</span> option
-                    <br>
-                    2. For practicing words from specific characters, select <span class="highlight" onclick="checkRadio('not')">Specific Characters</span> option
-                    <br>
-                    3. Than click on <span class="highlight" onclick="generateWords()">Generate Word</span>
-                    <br>
-                    4. To reset all click on <span class="highlight" onclick="resetAll()">Start Again</span>
-                </div>
+            <div class="words" id="words">
             </div>
             <br>
             <div class="score" id="score" >

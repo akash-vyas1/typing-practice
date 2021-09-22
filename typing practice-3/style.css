@@ -12,22 +12,6 @@ body{
     justify-content: space-between;
 }
 
-::-webkit-scrollbar{
-    width: 12px;
-}
-::-webkit-scrollbar-track{
-    background: transparent;
-}
-::-webkit-scrollbar-thumb{
-    background: #02a88d;
-    border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover{
-    background: #10c0a3;
-
-}
-
-
 .headline,footer{
     font-size: 30px;
     background: linear-gradient(90deg, #393f4d 50%,#1d1e22);
@@ -90,8 +74,7 @@ footer{
 
 form{
     /* margin-top: 20px; */
-    padding: 7px;
-    padding-left: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: row ;
     flex-wrap: wrap;
@@ -99,22 +82,6 @@ form{
     box-sizing: border-box;
     user-select: none;
 }
-
-/* form input[type="button"]{
-    position: relative;
-    padding-right: 20px;
-}
-
-.activeImg{
-    position: relative;
-    width: 25px;
-    height: 20px;
-    z-index: 2;
-    left: -23px;
-    top: 6px;
-    display: none;
-} */
-
 
 form input,form label{
     margin: 7px;
@@ -199,7 +166,6 @@ form label img,.mainWords img, .instructions img {
     width: 100%;
     /* margin: -25px 0 0 0; */
     box-sizing: border-box;
-    padding-top: 3;
 }
 
 .specCharInput label {
@@ -264,12 +230,6 @@ form label img,.mainWords img, .instructions img {
 .words>img {
     z-index: 10;
     user-select: none;
-}
-
-.first{
-    font-size: 19px !important;
-    font-weight: 500;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .typeWords:focus {

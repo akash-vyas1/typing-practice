@@ -1,15 +1,15 @@
 console.log("Hello");
 
 let mainWords = document.getElementById('mainWords');
+mainWords.style.display='none';
 let charInput = document.getElementById('specCharInput');
 let currentChars = document.getElementById('currentChars');
 let inChar = document.getElementById('charsIn');
 let words = document.getElementById('words');
-let firstText = document.getElementById('firstText');
-let firstTextHtml = firstText.innerHTML;
 let typeWords = document.getElementById('typeWords');
 let score = document.getElementById('score');
 score.style.display='none';
+words.style.display='none';
 typeWords.style.display='none';
 currentChars.style.display ='none';
 charInput.style.display = 'none';
@@ -40,16 +40,13 @@ function resetAll(){
     specCharRadio.checked = false;
     charInput.style.display = 'none';
     currentChars.style.display ='none';
-    // words.style.display= 'none';
+    words.style.display= 'none';
     typeWords.style.display='none';
     score.style.display='none';
-    // mainWords.style.display='none';
+    mainWords.style.display='none';
     incorrect=0;
     generatedParagraph="";
     words.innerText="";
-    words.classList.add('first');
-    firstText.style.display= 'unset';
-    words.innerHTML = firstTextHtml;
     score.style.background = 'rgb(240, 240, 240)';
     percentage.innerText='0%';
     progress.style.width=0+'%';
@@ -96,15 +93,10 @@ function generateWords(){
 
     if(radioChecked){
 
-        firstText.style.display= 'none';
-        words.classList.remove('first');
-
         let inputField = document.getElementById('charsIn');
         inputString = inputField.value;
         if((inputString==undefined || inputString=='' )&&inputTaking==true ){
-            alert("Enter characters");
-            words.innerHTML = firstTextHtml;
-            words.classList.add('first');
+            alert("Enter characters")
         }else {
             if(inputTaking==false){
                 // alert('generating words');
@@ -133,8 +125,6 @@ function generateWords(){
         }
     }else {
         alert('Select any option');
-        words.innerHTML = firstTextHtml;
-        words.classList.add('first');
     }
 }
 
@@ -174,19 +164,19 @@ function word(array,len){
     return word2;
 }
 
-// let instructions = document.getElementById('content');
-// let instructionText = document.getElementById('instructionText');
-// instructions.style.display='none';
+let instructions = document.getElementById('content');
+let instructionText = document.getElementById('instructionText');
+instructions.style.display='none';
 
-// function showInstructions(){
-//     instructions.style.display='unset';
-//     instructionText.style.display='none';
-// }
+function showInstructions(){
+    instructions.style.display='unset';
+    instructionText.style.display='none';
+}
 
-// function closeInstruction(){
-//     instructions.style.display='none';
-//     instructionText.style.display='unset';
-// }
+function closeInstruction(){
+    instructions.style.display='none';
+    instructionText.style.display='unset';
+}
 
 function generateResults(){
     if(newStart==0){
