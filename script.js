@@ -27,6 +27,7 @@ let newStart =0;
 let start,end;
 let specCharTick = document.getElementById('specCharTick');
 let allCharTick = document.getElementById('allCharTick');
+let totalWords = document.getElementById('totalWords');
 
 
 function resetAll(){
@@ -151,7 +152,9 @@ function createWords(str){
 
 function getWords(charArray){
     let paragraph = '';
-    for(let i=0;i<1;i++){
+    let wordCount = (totalWords.value)/10;
+    console.log("Word count : "+wordCount);
+    for(let i=0;i<wordCount;i++){
         // if(i>0 && i%2==0){
         //     paragraph = paragraph+'\n';
         // }
@@ -159,7 +162,12 @@ function getWords(charArray){
         paragraph = paragraph + word(charArray,3)+" ";
         paragraph = paragraph + word(charArray,4)+" ";
         paragraph = paragraph + word(charArray,5)+" ";
+        paragraph = paragraph + word(charArray,2)+" ";
+        paragraph = paragraph + word(charArray,3)+" ";
+        paragraph = paragraph + word(charArray,5)+" ";
         paragraph = paragraph + word(charArray,6)+" ";
+        paragraph = paragraph + word(charArray,4)+" ";
+        paragraph = paragraph + word(charArray,2)+" ";
     }
     // console.log(paragraph);
     return paragraph;
