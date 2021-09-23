@@ -46,7 +46,7 @@ function resetAll(){
     words.innerText="";
     words.classList.add('first');
     words.innerHTML = firstTextHtml;
-    score.style.background = 'rgb(240, 240, 240)';
+    score.style.background = '#f8f8f8';
     percentage.innerText='0%';
     progress.style.width=0+'%';
     newStart=true;
