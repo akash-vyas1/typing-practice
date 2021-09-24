@@ -28,6 +28,17 @@ let specCharTick = document.getElementById('specCharTick');
 let allCharTick = document.getElementById('allCharTick');
 let totalWords = document.getElementById('totalWords');
 
+let tempOption ,allOptions;
+function selectValue(total,valueId){
+    totalWords.value = total;
+    tempOption = document.getElementById(valueId);
+    allOptions = document.querySelectorAll('.wordOption');
+    console.log(allOptions);
+    for(i=0;i<allOptions.length;i++) {
+        allOptions[i].style.textDecoration='none';
+    }
+    tempOption.style.textDecoration = 'underline';
+}
 
 function resetAll(){
     // alert('resetting')
